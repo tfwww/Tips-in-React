@@ -29,7 +29,52 @@
 
 `npm install --save swiper`
 
+## 编写 Swiper 组件
 
+1. 首先引入 Swiper 以及样式
+
+``` javascript
+import Swiper from 'swiper'
+
+import 'swiper/dist/css/swiper.min.css'
+```
+2. 在组件挂载完毕的时候生成 Swiper 对象
+
+``` javascript
+componentDidMount() {
+    new Swiper(this.swiperID, {
+        pagination: {
+            el: this.paginateID,
+        },
+    });
+}
+```
+
+`this.swiperID` 和 `this.paginateID` 本来应该是 HTML 元素或者相应的元素选择器字符串，如 '#swiper' <br>
+在 React 中我用了 ref 方法去引用已到达引用元素的效果。
+
+3. 在 React 的 render 方法构造 html 结构，注意 ref 的引用
+
+``` javascript
+render() {
+    const items = this.renderList()
+    return (
+        <div className="wxchat-banner">
+            <section className="new_custom swiper-container index_tab_con" ref={self => this.swiperID = self}>
+                <ul className="swiper-wrapper">
+                    {items}
+                </ul>
+                <div className="swiper-pagination banner-pagination" ref={self => this.paginateID = self}></div>
+            </section>
+        </div>
+    )
+}
+```
+## 接下来引用插件的方法如下 <br>
+
+`ReactDOM.render(<Swiper />, document.getElementById('root'))`
+
+以上就是作为一个展示性组件如何引入 Swiper 并在 React 中实现轮播图的代码。
 
 
 

@@ -1,0 +1,23 @@
+.wxchat-banner {
+    overflow: hidden;
+    background-color: beige;
+}
+
+.wxchat-banner .swiper-container {
+    margin-top: -0.55rem;
+}
+
+.index_tab_con:nth-child(1) {
+    display: block;
+}
+
+.wxchat-banner img {
+    height: 250px;
+}
+ul li{
+    list-style-type:none;
+    text-align: center;
+}
+.banner-pagination {text-align: right !important;}
+.banner-pagination .swiper-pagination-bullet  {background-color: #a3d0ff;opacity: 1;}
+.banner-pagination .swiper-pagination-bullet-active  {background-color: #fff;}
