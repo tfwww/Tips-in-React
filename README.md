@@ -1,6 +1,6 @@
 # Swiper-in-React
-手把手教你在 react 中使用 Swiper 4 做轮播图
-
+手把手教你在 react 中使用 Swiper 4 做轮播图 <br>
+![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/demo.gif)
 
 ## 为啥要写这个东西
 项目之前是用的 jq，现在打算用 React 重构，由于原项目已经引用了 Swpier 组件，故自然而然重构项目的时候也就考虑到怎么在 React 中使用这个组件。<br>
@@ -135,9 +135,6 @@ export default SwiperContainer
 ---
 最后，为啥要特地编写容器组件去获取数据，然后再传递给 Swiper 组件呢？ <br>
 这么做是为了 Swiper 可以在多处地方复用，如果这个组件里面包含了数据交互，那么必然无法达到复用的要求，还需要再做改动。
-
-![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/3.jpg)
-
 
 
 
