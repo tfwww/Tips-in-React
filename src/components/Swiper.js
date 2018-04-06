@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.min.css'
 import './Swiper.css'
-import img1 from '../images/1.jpg'
-import img2 from '../images/2.jpg'
-import img3 from '../images/3.jpg'
+// import img1 from '../images/1.jpg'
+// import img2 from '../images/2.jpg'
+// import img3 from '../images/3.jpg'
 
 
 class Slideshow extends Component {
@@ -18,7 +18,8 @@ class Slideshow extends Component {
     }
 
     renderList() {
-        let items = [img1, img2, img3]
+        // let items = [img1, img2, img3]
+        const items = this.props.list
         const result = items.map((item, index) => {
             return (
                 <li className="swiper-slide" key={index}>

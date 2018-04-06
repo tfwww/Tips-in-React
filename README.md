@@ -74,7 +74,67 @@ render() {
 
 `ReactDOM.render(<Swiper />, document.getElementById('root'))`
 
-以上就是作为一个展示性组件如何引入 Swiper 并在 React 中实现轮播图的代码。
+以上就是作为一个**展示性组件**如何引入 Swiper 并在 React 中实现轮播图的代码。<br>
+
+## 数据交互轮播图
+
+如果作为有数据交互的轮播图，我们应该再写一个**容器组件**来获取数据然后更新到上面写的**展示性组件**中。
+
+1. 编写容器组件
+
+数据通过 states 传给子组件 Swiper
+
+``` javascript
+class SwiperContainer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            list: []
+        }
+    }
+
+    componentDidMount() {
+        // 这里只是写死数据，一般实际项目是用接口获取数据
+        // const url = '/xxxx/xxxxx'
+        // fetch(url).then(res => res.json()).then(
+        //     (result) => {
+        //         this.setState({
+        //             list: result.list
+        //         })
+        //     },
+        //     (error) => {
+        //         this.setState({
+        //             error
+        //         });
+        //     }
+        // )
+        this.setState({
+            list: [img1, img2, img3]
+        })
+    }
+
+    render() {
+
+        const {list} = this.state
+        return (
+            <Swiper list={list} />
+        )
+    }
+}
+
+export default SwiperContainer
+```
+
+2. 改动展示性组件
+在 `componentDidMount` 周期函数中，添加 `observer: true,` 这一配置项。
+
+**这一点非常重要，如果不添加的话，Swiper 无法检测到数据变动，轮播图显示的就一直只有一张图片。**
+
+当初为了修复这个坑可是研究了好久！！！
+
+最后，为啥要特地编写容器组件去获取数据，然后再传递给 Swiper 组件呢？ <br>
+这么做事为了 Swiper 可以在多处地方复用，如果这个组件里面包含了数据交互，那么必然无法达到复用的要求，还需要再做改动。
+
 
 
 
