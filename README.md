@@ -2,7 +2,7 @@
 如果有哪里说得不准确的地方，欢迎指正。
 
 ## 目录
-- [引入并使用 JS 插件](#引入并使用-JS-插件)
+- [引入并使用JS插件](#引入并使用JS插件)
 - [配置路由表](#配置路由表)
 
 ### 搭建 React 环境
@@ -30,7 +30,7 @@
 
 ---
 
-## 引入并使用 JS 插件
+## 引入并使用JS插件
 以 Swiper 为例，手把手教你在 React 中使用 Swiper 4 做轮播图 <br>
 ![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/demo.gif)
 
