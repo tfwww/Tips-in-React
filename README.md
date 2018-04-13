@@ -190,7 +190,7 @@ const routes = [
     }
 ]
 ```
-1. 指的注意的是，路由表的 component，如果拥有子路由，则需添加 `renderRoutes` 函数：
+1. 值得注意的是，路由表的 component，如果拥有子路由，则需添加 `renderRoutes` 函数：
 ``` javascript
 const Mine = ({route}) => (
     <div>
