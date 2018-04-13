@@ -190,7 +190,7 @@ const routes = [
     }
 ]
 ```
-1. 值得注意的是，路由表的 component，如果拥有子路由，则需添加 `renderRoutes` 函数：
+1. **值得注意的是，路由表的 component，如果拥有子路由，则需添加 `renderRoutes` 函数：**
 ``` javascript
 const Mine = ({route}) => (
     <div>
@@ -204,7 +204,7 @@ const Mine = ({route}) => (
 )
 ```
 
-2. 对于一些静态组件，没有数据传递的，可以如下直接定义：
+2. **对于一些静态组件，没有数据传递的，可以如下直接定义：**
 ``` javascript
 // 静态组件，无法传值
 const Info = () => (
@@ -212,7 +212,7 @@ const Info = () => (
 )
 ```
 
-3. 那如果组件需要值传递，那么就需要包一层，再传入到路由表里：
+3. **那如果组件需要值传递，那么就需要包一层，再传入到路由表里：**
 > 假设我们现在有个组件 Gender 显示用户性别 Gender.js
 ``` javascript
 import React, { Component } from 'react'
