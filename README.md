@@ -2,7 +2,7 @@
 如果有哪里说得不准确的地方，欢迎指正。
 
 ## 目录
-- [引入并使用JS插件](#引入并使用JS插件)
+- [引入并使用JS插件](#引入并使用插件)
 - [配置路由表](#配置路由表)
 
 ### 搭建 React 环境
@@ -30,7 +30,7 @@
 
 ---
 
-## 引入并使用JS插件
+## 引入并使用插件
 以 Swiper 为例，手把手教你在 React 中使用 Swiper 4 做轮播图 <br>
 ![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/demo.gif)
 
@@ -153,6 +153,9 @@ export default SwiperContainer
 ---
 
 ## 配置路由表
+### 效果图
+![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/route_config.gif)
+
 ### 为啥要写这个东西
 网上已经有很多文章阐述如何配置路由表，但是有些过时，且文章代码已经不能使用，故记录下自己配置路由表的过程。
 
@@ -236,5 +239,3 @@ const GenderWrapper = () => (
     </div>
 )
 ```
-### 效果图
-![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/route_config.gif)
