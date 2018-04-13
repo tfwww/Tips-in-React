@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Swiper from 'swiper'
+import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 import './Swiper.css'
 // import img1 from '../images/1.jpg'
