@@ -239,3 +239,14 @@ const GenderWrapper = () => (
     </div>
 )
 ```
+
+4. 而对于整个应用入口则为如下：
+``` javascript
+ReactDOM.render(
+    <HashRouter>
+        {renderRoutes(routes)}
+    </HashRouter>,
+    document.getElementById('root')
+);
+```
+直接通过 routes 路由表来渲染整个应用。
