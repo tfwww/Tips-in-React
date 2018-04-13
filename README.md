@@ -48,7 +48,8 @@
 1. 首先引入 Swiper 以及样式
 
 ``` javascript
-import Swiper from 'swiper'
+// 引入此路径，才不会打包失败
+import Swiper from 'swiper/dist/js/swiper.js'
 
 import 'swiper/dist/css/swiper.min.css'
 ```
