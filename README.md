@@ -43,7 +43,7 @@
 
 `npm install --save swiper`
 
-## 编写 Swiper 组件
+### 编写 Swiper 组件
 
 1. 首先引入 Swiper 以及样式
 
