@@ -9,7 +9,8 @@ import { renderRoutes } from 'react-router-config'
 
 ReactDOM.render(
     <HashRouter>
-        {renderRoutes(routes)}
+		{/* {renderRoutes(routes)} */}
+		<App />
     </HashRouter>,
     document.getElementById('root')
 );
