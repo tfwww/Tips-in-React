@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Dialog from "../component/Dialog";
+import Dialog from "../components/Dialog";
 
 let debug = true
 const log = debug ? console.log.bind(console) : () => {}
 const dialogWrapper = document.createElement('div')
 
-const APP = {
-    dialog: function(config) {
+const tools = {
+    showDialog: function(config) {
         document.body.appendChild(dialogWrapper);
         ReactDOM.render((
                 <Dialog {...config} />
@@ -28,5 +28,5 @@ const APP = {
 
 }
 
-export default APP
-export {log, $path}
+export default tools
+export {log}

@@ -4,9 +4,9 @@
  * @param {string} text 弹框内容
  * <Dialog
         type={'confirm'}
-        text={'您还未开通存管账户！现在去开通吧'}
-        sureText={'开通存管账户'}
-        cancleText={'暂不开通'}
+        text={'主体'}
+        sureText={'是'}
+        cancleText={'否'}
         callback={() => {
             console.log('sure')
         }}
@@ -17,8 +17,9 @@
  */
 
 import React, { Component } from 'react'
-import APP, {log} from '../utils/tool'
-import PropTypes from 'prop-types';
+import tools, {log} from '../utils/tools'
+import PropTypes from 'prop-types'
+import '../assets/css/Dialog.css'
 
 const Prompt = (props) => {
     const {type, inputType, placeholder} = props
@@ -88,17 +89,17 @@ class Dialog extends Component {
         const {callback} = this.props
         const {inputVal} = this.state
         callback && typeof callback === "function" && callback(inputVal)
-        APP.closeDialog()
+        tools.closeDialog()
     }
 
     cancel() {
         const {cancelFn} = this.props
         cancelFn && typeof cancelFn === "function" && cancelFn()
-        APP.closeDialog()
+        tools.closeDialog()
     }
 
     clickIcon() {
-        APP.closeDialog()
+        tools.closeDialog()
     }
 
     renderPrompt() {
