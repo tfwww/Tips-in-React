@@ -254,6 +254,9 @@ ReactDOM.render(
 直接通过 routes 路由表来渲染整个应用。
 
 ## 配置全局组件
+### 效果图
+![实例](https://github.com/wmzhong/Swiper-in-React/blob/master/src/images/dialog_demo.gif)
+
 ### 为啥要写这个东西
 在写项目的时候，总有一些组件需要全局使用的。<br>
 举个例子，调用弹窗的时候，是不是每次都要在父组件里放上弹窗组件，然后再通过 state 控制？<br>
