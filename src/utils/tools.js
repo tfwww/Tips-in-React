@@ -25,7 +25,6 @@ const tools = {
         }
         document.body.className.replace(/\preventScroll\b/g, "")
     },
-
 }
 
 export default tools

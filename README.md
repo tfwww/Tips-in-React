@@ -4,6 +4,7 @@
 ## 目录
 - [引入并使用JS插件](#引入并使用插件)
 - [配置路由表](#配置路由表)
+- [配置全局组件](#配置全局组件)
 
 ### 搭建 React 环境
 1. 安装脚手架 <br>
@@ -251,3 +252,66 @@ ReactDOM.render(
 );
 ```
 直接通过 routes 路由表来渲染整个应用。
+
+## 配置全局组件
+### 为啥要写这个东西
+在写项目的时候，总有一些组件需要全局使用的。<br>
+举个例子，调用弹窗的时候，是不是每次都要在父组件里放上弹窗组件，然后再通过 state 控制？<br>
+所以，我们现在的目标是通过调用一个函数，就能够显示弹窗。<br>
+
+### 步骤
+1. 先写好一个组件 `Dialog`，[Dialog](./src/components/Dialog.js) 由于此处不是关键代码，故不作解释；
+2. 封装 tools 并暴露接口以方便全局调用，关键代码；
+``` javascript
+const dialogWrapper = document.createElement('div')
+const tools = {
+	// 显示弹窗
+    showDialog: function(config) {
+		// 先创建弹窗元素容器
+		document.body.appendChild(dialogWrapper)
+		// 然后通过 redner 方法加载组件
+        ReactDOM.render((
+                <Dialog {...config} />
+            ),
+            dialogWrapper
+        )
+        if (!document.body.className.includes('preventScroll')) {
+            document.body.className += ' preventScroll'
+        }
+	},
+	// 关闭弹窗
+    closeDialog: function() {
+		// 挂载组件
+		ReactDOM.unmountComponentAtNode(dialogWrapper)
+		// 删除节点
+        if (dialogWrapper.parentNode != null) {
+            document.body.removeChild(dialogWrapper)
+        }
+        document.body.className.replace(/\preventScroll\b/g, "")
+    },
+}
+```
+### 怎么使用 [Dialog Demo](./src/pages/DialogDemo.js)
+假设现在有个需求点击按钮出现弹窗，请看代码如下：
+``` javascript
+class DialogDemo extends Component {
+	constructor(props) {
+		super(props)
+		this.show = this.show.bind(this)
+	}
+
+	show() {
+		// 这里就是通过公共方法调用显示弹窗了
+		tools.showDialog({
+			type: 'tips',
+			text: '演示弹框',
+		})
+	}
+
+    render() {
+        return (
+            <button onClick={this.show}>点击出现弹窗</button>
+        )
+    }
+}
+```
