@@ -10,7 +10,6 @@ import { renderRoutes } from 'react-router-config'
 
 ReactDOM.render(
     <HashRouter>
-		{/* {renderRoutes(routes)} */}
 		<App />
     </HashRouter>,
     document.getElementById('root')
